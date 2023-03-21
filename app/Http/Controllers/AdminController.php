@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use DB;
+use Redirect;
+use Session;
 
 class AdminController extends Controller
 {
@@ -21,15 +23,22 @@ class AdminController extends Controller
             ->where('admin_email', $email)
             ->where('admin_password', $password)
             ->first();
-        print_r($result);
+        //print_r($result);
 
-        // if($result){
-        //     Session::put('admin_email', $result->admin_email);
-        //     return Redirect::to('/admin-dashboard');
-        // } else {
-        //     Session::put('exception', 'Email or password invalid');
-        //     return Redirect::to('/admin');
-        // }
+        if($result){
+            //Session::put('admin_email', $result->admin_email);
+            //return Redirect::to('/admin-dashboard');
+            return redirect('/admin-dashboard');
+            
+        } else {
+            Session::put('exception', 'Email or password invalid');
+            //return Redirect::to('/admin');
+            return redirect('/admin'); 
+        }
+    }
+
+    public function showAdminDashboard(){
+        return view('admin_dashboard_page');
     }
 
     public function index()
