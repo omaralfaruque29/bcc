@@ -41,6 +41,15 @@ class AdminController extends Controller
         return view('admin_dashboard_page');
     }
 
+    public function getAdmin()
+    {
+        $result = DB::table('admins')
+            ->where('admin_email', 'raj@gmail.com')
+            ->get();
+        print_r($result);
+    }
+
+
     public function index()
     {
         //
