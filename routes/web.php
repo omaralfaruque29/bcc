@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +25,7 @@ Route::post('/create-admin', [AdminController::class, 'store']);
 Route::post('/admin-login', [AdminController::class, 'login']);
 Route::get('/admin-dashboard', [AdminController::class, 'showAdminDashboard']);
 Route::get('/get-admin', [AdminController::class, 'getAdmin']);
+
+Route::get('/add-student-page', [StudentController::class, 'create']);
 
 Route::get('/teacher', function () {return "teacher form";});
