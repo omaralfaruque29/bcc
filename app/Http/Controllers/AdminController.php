@@ -15,20 +15,13 @@ class AdminController extends Controller
      */
 
     public function login(Request $request){
-        //return 'from login dashboard method';
-        $email = $request->admin_email;
+        //$email = $request->admin_email;
         //$password = md5($request->admin_password);
-        $password = ($request->admin_password);
-        // $result = DB::table('admins')
-        //     ->where('admin_email', $email)
-        //     ->where('admin_password', $password)
-        //     ->first();
+        //$password = ($request->admin_password);
+        $result = Admin::where('admin_email', $request->admin_email)
+            ->where('admin_password', $request->admin_password)
+            ->first();
         //print_r($result);
-
-        $result = Admin::where('admin_email', $email)
-            ->where('admin_password', $password)
-            ->get();
-        print_r($result);
         if($result){
             //Session::put('admin_email', $result->admin_email);
             //return Redirect::to('/admin-dashboard');
@@ -48,9 +41,6 @@ class AdminController extends Controller
     public function getAdmin()
     {
         $result = Admin::find(1);
-        // $result = DB::table('admins')
-        //     ->where('admin_email', 'raj@gmail.com')
-        //     ->get();
         print_r($result->admin_email);
     }
 
