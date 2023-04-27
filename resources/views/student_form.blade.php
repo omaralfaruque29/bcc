@@ -32,6 +32,10 @@
                   <label for="exampleInputEmail1">Course</label>
                   <input type="text" class="form-control p-input" name="student_course" placeholder="Course">
               </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Payment</label>
+                  <input type="text" class="form-control p-input" name="student_course_payment_status" placeholder="paid/not_paid">
+              </div>
 <!--
               <div class="form-group">
                   <label>Upload file</label>

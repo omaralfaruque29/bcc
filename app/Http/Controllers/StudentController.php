@@ -28,7 +28,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'admin_email'=>'required',
+        //     'admin_password'=>'required'
+        // ]); 
+        $aStudent = $request->all();
+        Student::create($aStudent);
+        return "student added successfully";
+        //return redirect('/admin');
     }
 
     /**
