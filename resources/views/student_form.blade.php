@@ -4,7 +4,7 @@
 <div class="col-12 col-lg-6 grid-margin">
   <div class="card">
       <div class="card-body">
-        <p class="alert-danger">
+        <p class="alert-success">
                 <?php 
                   $exception = Session::get('add_student_message');
                   if($exception){

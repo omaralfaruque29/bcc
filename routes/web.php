@@ -28,5 +28,6 @@ Route::get('/get-admin', [AdminController::class, 'getAdmin']);
 
 Route::get('/add-student-page', [StudentController::class, 'create']);
 Route::post('/add-student', [StudentController::class, 'store']);
+Route::get('/all-student', [StudentController::class, 'index']);
 
 Route::get('/teacher', function () {return "teacher form";});

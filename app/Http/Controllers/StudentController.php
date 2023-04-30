@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Session;
 
 class StudentController extends Controller
 {
@@ -12,8 +13,11 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $allStudent = Student::all();
+        return view('all_student', ['allStudent' => $allStudent]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -34,8 +38,10 @@ class StudentController extends Controller
         // ]); 
         $aStudent = $request->all();
         Student::create($aStudent);
-        return "student added successfully";
-        //return redirect('/admin');
+        //return "student added successfully";
+        Session::put('add_student_message','new student added successfully');
+        //return redirect('/add-student-page');
+        return view('student_form');
     }
 
     /**
