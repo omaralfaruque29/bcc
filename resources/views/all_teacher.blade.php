@@ -8,8 +8,8 @@
                     <thead>
                       <tr>
                           <th>Serial</th>
-                          <th>Student ID</th>
-                          <th>Student Name</th>
+                          <th>Teacher ID</th>
+                          <th>Teacher Name</th>
                           <th>Email</th>
                           <th>Mobile</th>
                           <th>Course</th>
@@ -18,22 +18,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($allStudent as $aStudent)
+                      @foreach($allTeacher as $aTeacher)
                       <tr>
-                          <td>{{$aStudent->id}}</td>
-                          <td>{{$aStudent->id}}</td>
-                          <td>{{$aStudent->student_name}}</td>
-                          <td>{{$aStudent->student_email}}</td>
-                          <td>{{$aStudent->student_mobile}}</td>
-                          <td>{{$aStudent->student_course}}</td>
-                          <td>{{$aStudent->student_course_payment_status}}</td>
+                          <td>{{$aTeacher->id}}</td>
+                          <td>{{$aTeacher->id}}</td>
+                          <td>{{$aTeacher->teacher_name}}</td>
+                          <td>{{$aTeacher->teacher_email}}</td>
+                          <td>{{$aTeacher->teacher_mobile}}</td>
+                          <td>{{$aTeacher->teacher_course}}</td>
+                          <td>{{$aTeacher->teacher_payment_status}}</td>
                           <td>
                             <label class="badge badge-info">enrolled</label>
                           </td>
                           <td>
-                            <a href="{{URL::to('/view-student/'.$aStudent->id)}}" id="view"><button class="btn btn-outline-primary">View</button></a>
-                            <a href="{{URL::to('/edit-student/'.$aStudent->id)}}" id="edit"><button class="btn btn-outline-primary">Edit</button></a>
-                            <a href="{{URL::to('/delete-student/'.$aStudent->id)}}" id="delete"><button class="btn btn-outline-primary">Delete</button></a>
+                            <a href="{{URL::to('/view-teacher/'.$aTeacher->id)}}" id="view"><button class="btn btn-outline-primary">View</button></a>
+                            <a href="{{URL::to('/edit-teacher/'.$aTeacher->id)}}" id="edit"><button class="btn btn-outline-primary">Edit</button></a>
+                            <a href="{{URL::to('/delete-teacher/'.$aTeacher->id)}}" id="delete"><button class="btn btn-outline-primary">Delete</button></a>
                           </td>
                       </tr>
                       @endforeach

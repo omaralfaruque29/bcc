@@ -24,7 +24,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student_form');
+        return view('edit_student_page');
+        //return view('student_form');
     }
 
     /**
@@ -55,9 +56,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student $student)
+    public function edit()
     {
-        //
+        //$aStudent = Student::find($id);
+        return view('student_form');
     }
 
     /**
@@ -71,8 +73,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        $aStudent = Student::find($id);
+        $aStudent->delete();
+        return redirect('/all-student');
     }
 }

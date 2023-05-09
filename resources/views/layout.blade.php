@@ -140,6 +140,25 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">Teacher</span>
+                <i class="mdi mdi-chevron-down menu-arrow"></i>
+              </a>
+              <div class="collapse" id="sidebar_layouts">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{URL::to('/add-teacher-page')}}">Add Teacher</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{URL::to('/all-teacher')}}">All Teacher</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="{{URL::to('/student-information')}}" aria-expanded="false" aria-controls="layoutsSubmenu">
                 <i class="mdi mdi-arrow-expand-all menu-icon"></i>
@@ -257,6 +276,7 @@
   <!-- End custom js for this page-->
   <!--for pop up alert-->
   <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js')}}"></script>
+  <!--
   <script>
         $(document).on("click", "#delete", function(e) {
           e.preventDefault();
@@ -265,6 +285,7 @@
             });
         });
     </script>
+      -->
     <!--
   <script>
         $(document).on("click", "#delete" function(e) {
