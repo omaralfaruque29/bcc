@@ -26,15 +26,21 @@ Route::post('/create-admin', [AdminController::class, 'store']);
 Route::post('/admin-login', [AdminController::class, 'login']);
 Route::get('/admin-dashboard', [AdminController::class, 'showAdminDashboard']);
 Route::get('/get-admin', [AdminController::class, 'getAdmin']);
+Route::get('/admin-logout', function () {return view('admin_login_page');});
 
 Route::get('/add-student-page', [StudentController::class, 'create']);
 Route::post('/add-student', [StudentController::class, 'store']);
 Route::get('/all-student', [StudentController::class, 'index']);
 Route::get('/delete-student/{id}', [StudentController::class, 'destroy']);
 Route::get('/edit-student/{id}', [StudentController::class, 'edit']);
+Route::post('/update-student/{id}', [StudentController::class, 'update']);
+Route::get('/student/course/c', [StudentController::class, 'showStudentsEnrolledC']);
+Route::get('/student/course/python', [StudentController::class, 'showStudentsEnrolledPython']);
 
 Route::get('/add-teacher-page', [TeacherController::class, 'create']);
 Route::post('/add-teacher', [TeacherController::class, 'store']);
 Route::get('/all-teacher', [TeacherController::class, 'index']);
+
+
 
 Route::get('/teacher', function () {return "teacher form";});
