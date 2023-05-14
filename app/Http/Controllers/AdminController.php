@@ -55,7 +55,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin_signup');
+        return view('admin_signup_page');
     }
 
     /**
